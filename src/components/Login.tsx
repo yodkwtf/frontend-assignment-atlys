@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Button from './common/Button';
 import Input from './common/Input';
 import { useAppContext } from '../context';
-import { LiaTimesSolid } from 'react-icons/lia';
 import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router';
 
@@ -13,8 +12,7 @@ interface AppContextType {
 }
 
 const Login: React.FC = () => {
-  const { setShowLogin, setShowModal, showModal } =
-    useAppContext() as AppContextType;
+  const { setShowLogin } = useAppContext() as AppContextType;
 
   const navigate = useNavigate();
 
