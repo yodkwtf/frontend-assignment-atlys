@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import React from 'react';
 
 interface InputProps {
   labelFor: string;
@@ -8,53 +8,31 @@ interface InputProps {
   placeholder: string;
 }
 
-const Input = ({
+const Input: React.FC<InputProps> = ({
   labelFor,
   primaryLabel,
   secondaryLabel,
   inputType = 'text',
   placeholder,
-}: InputProps) => {
+}) => {
   return (
-    <InputWrapper>
-      <label htmlFor={labelFor}>
+    <div className="flex flex-col gap-2">
+      <label
+        htmlFor={labelFor}
+        className="flex justify-between items-center text-[#c5c7ca] font-semibold text-sm"
+      >
         <span>{primaryLabel}</span>
-        <small>{secondaryLabel}</small>
+        {secondaryLabel && (
+          <small className="text-xs cursor-pointer">{secondaryLabel}</small>
+        )}
       </label>
-      <input type={inputType} placeholder={placeholder} />
-    </InputWrapper>
+      <input
+        type={inputType}
+        placeholder={placeholder}
+        className="bg-transparent min-w-[415px] border-[1.5px] border-[#35373b] rounded-[0.25rem] p-2 placeholder-[#7f8084]"
+      />
+    </div>
   );
 };
+
 export default Input;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  label {
-    font-weight: 500;
-    color: #c5c7ca;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 0.5rem;
-
-    small {
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-  }
-
-  input {
-    background: transparent;
-    min-width: 415px;
-    border: 1.5px solid #35373b;
-    border-radius: 0.25rem;
-    padding: 0.5rem 0.75rem;
-
-    &::placeholder {
-      color: #7f8084;
-    }
-  }
-`;

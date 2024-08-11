@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import React from 'react';
 import { FaRegCommentAlt } from 'react-icons/fa';
 
 interface PostProps {
@@ -11,7 +11,7 @@ interface PostProps {
   commentCount: number;
 }
 
-const Post = ({
+const Post: React.FC<PostProps> = ({
   author,
   authorImg,
   time,
@@ -19,112 +19,39 @@ const Post = ({
   isEdited,
   content,
   commentCount,
-}: PostProps) => {
+}) => {
   return (
-    <Wrapper>
-      <div className="post-header">
-        <div className="author">
-          <img src={authorImg} alt={author} />
+    <div className="bg-[#27292d] rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-[#35373b]">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <img
+            src={authorImg}
+            alt={author}
+            className="h-11 w-11 rounded-full"
+          />
           <div>
-            <h4>{author}</h4>
-            <p>
+            <h4 className="text-[#c5c7ca] text-base font-medium">{author}</h4>
+            <p className="text-sm text-[#7f8084]">
               {time} {isEdited && ' • Edited'}
             </p>
           </div>
         </div>
-
         <span>...</span>
       </div>
-
-      <div className="post-content">
-        <span>{emoji}</span>
-        <p>{content}</p>
+      <div className="flex gap-4 bg-[#191920] p-4 rounded-lg">
+        <span className="h-12 w-12 rounded-full bg-[#27292d] grid place-items-center">
+          {emoji}
+        </span>
+        <p className="flex-1 bg-transparent border-none rounded-lg text-base text-[#7f8084]">
+          {content}
+        </p>
       </div>
-
-      <div className="post-footer">
+      <div className="flex items-center gap-2 text-[#7f8084]">
         <FaRegCommentAlt />
         <button>{commentCount} comments</button>
       </div>
-    </Wrapper>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  background-color: #27292d;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  position: relative;
-  z-index: 1; /* Ensure this is above the ::before pseudo-element */
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border: 2px solid #35373b;
-
-  .post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-
-    .author {
-      display: flex;
-      gap: 1rem;
-
-      img {
-        height: 2.75rem;
-        width: 2.75rem;
-        border-radius: 50%;
-      }
-
-      h4 {
-        color: #c5c7ca;
-        font-size: 16px;
-        font-weight: 500;
-      }
-
-      p {
-        color: #7f8084;
-        font-size: 14px;
-      }
-    }
-  }
-
-  .post-content {
-    display: flex;
-    column-gap: 1rem;
-    background: #191920;
-    padding: 1rem;
-    border-radius: 0.5rem;
-
-    span {
-      height: 3rem;
-      width: 3rem;
-      border-radius: 50%;
-      background: #27292d;
-      display: grid;
-      place-items: center;
-    }
-
-    p {
-      background: transparent;
-      border: none;
-      border-radius: 0.5rem;
-      color: #7f8084;
-      flex: 1;
-      font-size: 16px;
-    }
-  }
-
-  .post-footer {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-    color: #7f8084;
-
-    svg {
-      margin-top: 0.25rem;
-    }
-  }
-`;
 
 export default Post;

@@ -1,38 +1,29 @@
-import styled from 'styled-components';
+import React from 'react';
 
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   buttonText: string;
   handleClick?: (e: React.MouseEvent) => void;
+  classes?: string[];
 };
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   type = 'button',
   buttonText,
-  handleClick = (e) => {},
-}: ButtonProps) => {
+  handleClick = () => {},
+  classes = [],
+}) => {
   return (
-    <ButtonWrapper type={type} onClick={handleClick}>
+    <button
+      type={type}
+      onClick={handleClick}
+      className={`bg-[#7289da] text-white py-2 px-4 rounded-md font-medium transition-colors duration-200 hover:bg-[#677bc4] ${classes.join(
+        ' '
+      )}`}
+    >
       {buttonText}
-    </ButtonWrapper>
+    </button>
   );
 };
-
-const ButtonWrapper = styled.button`
-  background: #4a96ff;
-  color: #ffffff;
-  width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.3s;
-
-  &:hover {
-    background: #1d4ed8;
-  }
-`;
 
 export default Button;

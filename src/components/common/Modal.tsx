@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import React from 'react';
 import { useAppContext } from '../../context';
 import { LiaTimesSolid } from 'react-icons/lia';
 
@@ -14,65 +14,24 @@ type AppContextType = {
 const Modal: React.FC<ModalProps> = ({ children }) => {
   const { showModal, setShowModal } = useAppContext() as AppContextType;
   return (
-    <Wrapper className={`${showModal ? 'show' : null}`}>
-      <div className="children">
+    <div
+      className={`fixed inset-0 bg-black bg-opacity-50 grid place-items-center ${
+        showModal ? 'visible opacity-100' : 'invisible opacity-0'
+      } transition-all duration-500 z-50`}
+    >
+      <div className="relative">
         {children}
-        <div className="cross-btn">
-          <button onClick={() => setShowModal(false)}>
+        <div className="absolute top-4 right-4 bg-[#131319] rounded-full w-8 h-8 z-50">
+          <button
+            className="grid place-items-center w-full h-full z-51 text-white"
+            onClick={() => setShowModal(false)}
+          >
             <LiaTimesSolid />
           </button>
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: grid;
-  place-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s linear;
-  z-index: 999;
-
-  &.show {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .children {
-    position: relative;
-  }
-
-  .cross-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #131319;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    z-index: 1000;
-
-    button {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      place-items: center;
-      background: none;
-      border: none;
-      color: #ffffff;
-      cursor: pointer;
-      font-size: 14px;
-      text-align: center;
-    }
-  }
-`;
 
 export default Modal;

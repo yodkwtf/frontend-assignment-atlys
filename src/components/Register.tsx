@@ -1,28 +1,25 @@
+import React from 'react';
 import styled from 'styled-components';
 import Button from './common/Button';
 import Input from './common/Input';
 import { useAppContext } from '../context';
 import { FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router';
-
-interface AppContextType {
-  setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  showModal: boolean;
-}
+import { useNavigate } from 'react-router-dom';
 
 const Register: React.FC = () => {
-  const { setShowLogin } = useAppContext() as AppContextType;
-
+  const { setShowLogin } = useAppContext() as {
+    setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  };
   const navigate = useNavigate();
 
   return (
-    <RegisterWrapper>
-      <h5>sign up</h5>
-      <h3>Create an account to continue</h3>
-
+    <Wrapper>
+      <h5 className="text-[#6b6c70] text-center uppercase text-sm">Sign up</h5>
+      <h3 className="text-white text-lg font-medium my-0 mb-8 text-center">
+        Create an account to continue
+      </h3>
       <form>
-        <div className="form-elements">
+        <div className="flex flex-col gap-4">
           <Input
             labelFor="email"
             primaryLabel="Email"
@@ -50,40 +47,26 @@ const Register: React.FC = () => {
             }}
           />
         </div>
-
-        <p className="form-footer">
+        <p className="cursor-pointer text-sm mt-4 text-[#7f8084] flex gap-1">
           Already have an account?{' '}
-          <span onClick={() => setShowLogin(true)}>
+          <span
+            className="text-[#c5c7ca] flex items-center gap-1"
+            onClick={() => setShowLogin(true)}
+          >
             Login <FaArrowRight />
           </span>
         </p>
       </form>
-    </RegisterWrapper>
+    </Wrapper>
   );
 };
 
-const RegisterWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: #27292d;
   border-radius: 0.5rem;
   padding: 2.5rem 1.5rem;
   position: relative;
-  z-index: 1; /* Ensure this is above the ::before pseudo-element */
-
-  h5 {
-    color: #6b6c70;
-    font-size: 14px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
+  z-index: 1;
 
   &::before {
     content: '';
@@ -99,31 +82,8 @@ const RegisterWrapper = styled.div`
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    z-index: 0; /* Ensure this is behind the content */
-    pointer-events: none; /* Prevent it from intercepting clicks */
-  }
-
-  .form-elements {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .form-footer {
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 1rem;
-    color: #7f8084;
-    display: flex;
-    gap: 0.25rem;
-
-    span {
-      display: inline;
-      color: #c5c7ca;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    z-index: 0;
+    pointer-events: none;
   }
 `;
 

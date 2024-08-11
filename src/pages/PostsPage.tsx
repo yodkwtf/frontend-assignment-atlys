@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import React from 'react';
 import CreatePost from '../components/CreatePost';
 import posts from '../data/posts';
 import Post from '../components/Post';
@@ -7,17 +7,17 @@ import Auth from '../components/Auth';
 
 const PostsPage = () => {
   return (
-    <Container>
-      <div className="section-center">
+    <div className="grid min-h-screen bg-[#131319]">
+      <div className="w-full max-w-3xl mx-auto p-8">
         <header>
-          <h2>Hello Jane</h2>
-          <p>
+          <h2 className="text-lg text-[#c5c7ca]">Hello Jane</h2>
+          <p className="text-base text-[#7f8084] my-4 mx-0 mb-10 max-w-md">
             How are you doing today? Would you like to share something with the
             community 🤗
           </p>
         </header>
 
-        <div className="post-list">
+        <div className="grid gap-6">
           <CreatePost />
           {posts.map((post) => (
             <Post key={post.id} {...post} />
@@ -28,40 +28,8 @@ const PostsPage = () => {
       <Modal>
         <Auth />
       </Modal>
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  display: grid;
-  min-height: 100vh;
-  background: #131319;
-
-  .section-center {
-    width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  header {
-    h2 {
-      font-size: 28px;
-      color: #c5c7ca;
-    }
-
-    p {
-      font-size: 16px;
-      color: #7f8084;
-      margin: 1rem 0 2.5rem;
-      max-width: 500px;
-    }
-  }
-
-  .post-list {
-    display: grid;
-    row-gap: 1.5rem;
-  }
-`;
 
 export default PostsPage;
