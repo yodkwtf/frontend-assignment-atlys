@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = ({
   commentCount,
 }) => {
   return (
-    <div className="bg-[#27292d] rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-[#35373b]">
+    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-p">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <img
@@ -30,23 +30,25 @@ const Post: React.FC<PostProps> = ({
             className="h-11 w-11 rounded-full"
           />
           <div>
-            <h4 className="text-[#c5c7ca] text-base font-medium">{author}</h4>
-            <p className="text-sm text-[#7f8084]">
+            <h4 className="text-custom-primary text-base font-medium">
+              {author}
+            </h4>
+            <p className="text-sm text-custom-secondary">
               {time} {isEdited && ' • Edited'}
             </p>
           </div>
         </div>
         <span>...</span>
       </div>
-      <div className="flex gap-4 bg-[#191920] p-4 rounded-lg">
-        <span className="h-12 w-12 rounded-full bg-[#27292d] grid place-items-center">
+      <div className="flex gap-4 bg-custom-darker p-4 rounded-lg">
+        <span className="h-12 w-12 rounded-full bg-custom-dark grid place-items-center">
           {emoji}
         </span>
-        <p className="flex-1 bg-transparent border-none rounded-lg text-base text-[#7f8084]">
+        <p className="flex-1 bg-transparent border-none rounded-lg text-base text-custom-secondary">
           {content}
         </p>
       </div>
-      <div className="flex items-center gap-2 text-[#7f8084]">
+      <div className="flex items-center gap-2 text-custom-secondary">
         <FaRegCommentAlt />
         <button>{commentCount} comments</button>
       </div>

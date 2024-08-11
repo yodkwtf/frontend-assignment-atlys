@@ -21,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
     >
       <div className="relative">
         {children}
-        <div className="absolute top-4 right-4 bg-[#131319] rounded-full w-8 h-8 z-50">
+        <div className="absolute top-4 right-4 bg-custom-darkest rounded-full w-8 h-8 z-50">
           <button
             className="grid place-items-center w-full h-full z-51 text-white"
             onClick={() => setShowModal(false)}

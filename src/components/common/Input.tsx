@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({
     <div className="flex flex-col gap-2">
       <label
         htmlFor={labelFor}
-        className="flex justify-between items-center text-[#c5c7ca] font-semibold text-sm"
+        className="flex justify-between items-center text-custom-primary font-semibold text-sm"
       >
         <span>{primaryLabel}</span>
         {secondaryLabel && (
@@ -29,7 +29,7 @@ const Input: React.FC<InputProps> = ({
       <input
         type={inputType}
         placeholder={placeholder}
-        className="bg-transparent min-w-[415px] border-[1.5px] border-[#35373b] rounded-[0.25rem] p-2 placeholder-[#7f8084]"
+        className="bg-transparent min-w-[415px] border-[1.5px] border-custom-p rounded-[0.25rem] p-2 placeholder-custom-ph"
       />
     </div>
   );

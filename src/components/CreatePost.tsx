@@ -10,19 +10,19 @@ const CreatePost = () => {
   const { setShowModal } = useAppContext() as AppContext;
 
   return (
-    <div className="bg-[#27292d] rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-[#35373b]">
-      <h4 className="text-[#c5c7ca] text-lg font-medium text-left">
+    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-p">
+      <h4 className="text-custom-primary text-lg font-medium text-left">
         Create post
       </h4>
       <form className="flex flex-col gap-4">
-        <div className="flex items-center gap-4 bg-[#191920] p-4 rounded-lg">
-          <span className="h-12 w-12 rounded-full bg-[#27292d] grid place-items-center">
+        <div className="flex items-center gap-4 bg-custom-darker p-4 rounded-lg">
+          <span className="h-12 w-12 rounded-full bg-custom-dark grid place-items-center">
             💬
           </span>
           <input
             type="text"
             placeholder="How are you feeling today?"
-            className="bg-transparent flex-1 border-none rounded-lg text-[#7f8084] outline-none"
+            className="bg-transparent flex-1 border-none rounded-lg text-custom-secondary outline-none"
           />
         </div>
         <Button

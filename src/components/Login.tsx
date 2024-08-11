@@ -13,7 +13,7 @@ const Login: React.FC = () => {
 
   return (
     <Wrapper>
-      <h5 className="text-[#6b6c70] text-center uppercase text-sm">
+      <h5 className="text-custom-muted text-center uppercase text-sm">
         Welcome Back
       </h5>
       <h3 className="text-white text-lg font-medium my-0 mb-8 text-center">
@@ -43,10 +43,10 @@ const Login: React.FC = () => {
             }}
           />
         </div>
-        <p className="cursor-pointer text-sm mt-4 text-[#7f8084] flex gap-1">
+        <p className="cursor-pointer text-sm mt-4 text-custom-secondary flex gap-1">
           Not registered yet?{' '}
           <span
-            className="text-[#c5c7ca] flex items-center gap-1"
+            className="text-custom-primary flex items-center gap-1"
             onClick={() => setShowLogin(false)}
           >
             Register <FaArrowRight />
