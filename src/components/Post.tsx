@@ -58,24 +58,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(to bottom right, #969696, #343434);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: 0; /* Ensure this is behind the content */
-    pointer-events: none; /* Prevent it from intercepting clicks */
-  }
+  border: 2px solid #35373b;
 
   .post-header {
     display: flex;
@@ -108,8 +91,7 @@ const Wrapper = styled.div`
 
   .post-content {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    column-gap: 1rem;
     background: #191920;
     padding: 1rem;
     border-radius: 0.5rem;

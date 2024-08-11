@@ -60,14 +60,6 @@ const Register: React.FC = () => {
           </span>
         </p>
       </form>
-
-      {showModal && (
-        <div className="cross-btn">
-          <button onClick={() => setShowModal(false)}>
-            <LiaTimesSolid />
-          </button>
-        </div>
-      )}
     </RegisterWrapper>
   );
 };
@@ -78,26 +70,6 @@ const RegisterWrapper = styled.div`
   padding: 2.5rem 1.5rem;
   position: relative;
   z-index: 1; /* Ensure this is above the ::before pseudo-element */
-
-  .cross-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #131319;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    display: grid;
-    place-items: center;
-
-    button {
-      background: none;
-      border: none;
-      color: #ffffff;
-      cursor: pointer;
-      font-size: 14px;
-    }
-  }
 
   h5 {
     color: #6b6c70;
