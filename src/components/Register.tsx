@@ -2,13 +2,21 @@ import styled from 'styled-components';
 import Button from './common/Button';
 import Input from './common/Input';
 import { useAppContext } from '../context';
+import { LiaTimesSolid } from 'react-icons/lia';
+import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
 interface AppContextType {
   setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
 }
 
 const Register: React.FC = () => {
-  const { setShowLogin } = useAppContext() as AppContextType;
+  const { setShowLogin, setShowModal, showModal } =
+    useAppContext() as AppContextType;
+
+  const navigate = useNavigate();
 
   return (
     <RegisterWrapper>
@@ -35,14 +43,31 @@ const Register: React.FC = () => {
             inputType="password"
             placeholder="Choose a strong password"
           />
-          <Button type="submit" buttonText="Continue" />
+          <Button
+            type="submit"
+            buttonText="Continue"
+            handleClick={(e) => {
+              e.preventDefault();
+              navigate('/posts');
+            }}
+          />
         </div>
 
         <p className="form-footer">
           Already have an account?{' '}
-          <span onClick={() => setShowLogin(true)}>Login</span>
+          <span onClick={() => setShowLogin(true)}>
+            Login <FaArrowRight />
+          </span>
         </p>
       </form>
+
+      {showModal && (
+        <div className="cross-btn">
+          <button onClick={() => setShowModal(false)}>
+            <LiaTimesSolid />
+          </button>
+        </div>
+      )}
     </RegisterWrapper>
   );
 };
@@ -53,6 +78,26 @@ const RegisterWrapper = styled.div`
   padding: 2.5rem 1.5rem;
   position: relative;
   z-index: 1; /* Ensure this is above the ::before pseudo-element */
+
+  .cross-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #131319;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+
+    button {
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
 
   h5 {
     color: #6b6c70;
@@ -99,9 +144,15 @@ const RegisterWrapper = styled.div`
     font-size: 14px;
     margin-top: 1rem;
     color: #7f8084;
+    display: flex;
+    gap: 0.25rem;
 
     span {
+      display: inline;
       color: #c5c7ca;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
   }
 `;

@@ -42,6 +42,7 @@ const InputWrapper = styled.div`
 
     small {
       font-size: 0.75rem;
+      cursor: pointer;
     }
   }
 

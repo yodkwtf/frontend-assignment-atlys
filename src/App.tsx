@@ -1,11 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
-import Auth from './pages/Auth';
+import AuthPage from './pages/AuthPage';
+import PostsPage from './pages/PostsPage';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Auth />} />
+        <Route path="/" element={<AuthPage />} />
+        <Route path="/posts" element={<PostsPage />} />
       </Routes>
     </div>
   );

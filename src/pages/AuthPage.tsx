@@ -1,16 +1,8 @@
 import styled from 'styled-components';
-import Login from '../components/Login';
-import Register from '../components/Register';
+import Auth from '../components/Auth';
 import Logo from '../components/Logo';
-import { useAppContext } from '../context';
 
-interface AppContextType {
-  showLogin: boolean;
-}
-
-const Auth: React.FC = () => {
-  const { showLogin } = useAppContext() as AppContextType;
-
+const AuthPage: React.FC = () => {
   return (
     <Container>
       <div>
@@ -18,7 +10,7 @@ const Auth: React.FC = () => {
           <Logo />
         </div>
 
-        {showLogin ? <Login /> : <Register />}
+        <Auth />
       </div>
     </Container>
   );
@@ -37,4 +29,4 @@ const Container = styled.div`
   }
 `;
 
-export default Auth;
+export default AuthPage;

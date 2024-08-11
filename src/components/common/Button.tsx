@@ -3,13 +3,13 @@ import styled from 'styled-components';
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   buttonText: string;
-  handleClick?: () => void;
+  handleClick?: (e: React.MouseEvent) => void;
 };
 
 const Button = ({
   type = 'button',
   buttonText,
-  handleClick = () => {},
+  handleClick = (e) => {},
 }: ButtonProps) => {
   return (
     <ButtonWrapper type={type} onClick={handleClick}>
