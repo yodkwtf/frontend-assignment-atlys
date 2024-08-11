@@ -1,6 +1,4 @@
-import React from 'react';
-import Auth from '../components/Auth';
-import Logo from '../components/Logo';
+import { Auth, Logo } from '../components';
 
 const AuthPage: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
-import Login from '../components/Login';
-import Register from '../components/Register';
 import { useAppContext } from '../context';
+import Login from './Login';
+import Register from './Register';
 
 interface AppContextType {
   showLogin: boolean;

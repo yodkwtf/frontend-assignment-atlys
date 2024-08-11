@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './common/Button';
-import Input from './common/Input';
 import { useAppContext } from '../context';
 import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { Button, Input } from './common';
 
 const Login: React.FC = () => {
   const { setShowLogin } = useAppContext() as {

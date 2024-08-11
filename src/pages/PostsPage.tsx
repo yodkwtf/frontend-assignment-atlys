@@ -1,9 +1,6 @@
-import React from 'react';
-import CreatePost from '../components/CreatePost';
+import { Auth, CreatePost, Post } from '../components';
+import { Modal } from '../components/common';
 import posts from '../data/posts';
-import Post from '../components/Post';
-import Modal from '../components/common/Modal';
-import Auth from '../components/Auth';
 
 const PostsPage = () => {
   return (

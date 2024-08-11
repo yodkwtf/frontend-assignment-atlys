@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import AuthPage from './pages/AuthPage';
-import PostsPage from './pages/PostsPage';
+import { AuthPage, PostsPage } from './pages';
 
 function App() {
   return (
