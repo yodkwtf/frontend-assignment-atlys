@@ -2,18 +2,10 @@ import styled from 'styled-components';
 import CreatePost from '../components/CreatePost';
 import posts from '../data/posts';
 import Post from '../components/Post';
-import { useAppContext } from '../context';
 import Modal from '../components/common/Modal';
 import Auth from '../components/Auth';
 
-type AppContext = {
-  showModal: boolean;
-  setShowModal: (value: boolean) => void;
-};
-
 const PostsPage = () => {
-  const { showModal, setShowModal } = useAppContext() as AppContext;
-
   return (
     <Container>
       <div className="section-center">

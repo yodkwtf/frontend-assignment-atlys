@@ -4,7 +4,6 @@ import Input from './common/Input';
 import { useAppContext } from '../context';
 import { LiaTimesSolid } from 'react-icons/lia';
 import { FaArrowRight } from 'react-icons/fa';
-import { redirect } from 'react-router';
 import { useNavigate } from 'react-router';
 
 interface AppContextType {
