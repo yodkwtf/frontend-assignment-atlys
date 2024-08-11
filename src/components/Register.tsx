@@ -1,9 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-
-import { FaArrowRight } from 'react-icons/fa';
-import { Button, Input } from './common';
 import useAppContext from '../hooks/useAppContext';
+import { Button, Input } from './common';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Register: React.FC = () => {
   const { openLogin, handleSubmit } = useAppContext();

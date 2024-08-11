@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaRegCommentAlt } from 'react-icons/fa';
 
 interface PostProps {

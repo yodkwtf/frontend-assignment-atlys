@@ -1,6 +1,5 @@
-import React from 'react';
-import { LiaTimesSolid } from 'react-icons/lia';
 import useAppContext from '../../hooks/useAppContext';
+import { LiaTimesSolid } from 'react-icons/lia';
 
 const Modal: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { showModal, closeModal } = useAppContext();

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Auth, Logo } from '../components';
 
 const AuthPage: React.FC = () => {

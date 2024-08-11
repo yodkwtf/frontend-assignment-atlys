@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../assets/Logo.png';
 
 const Logo: React.FC = () => {

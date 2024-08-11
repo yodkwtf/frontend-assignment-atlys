@@ -1,8 +1,7 @@
-import React from 'react';
 import { Auth } from '../components';
 import { Modal } from '../components/common';
-import posts from '../data/posts';
 import { CreatePost, Post, PostHeader } from '../components/posts';
+import posts from '../data/posts';
 
 const PostsPage: React.FC = () => {
   return (
