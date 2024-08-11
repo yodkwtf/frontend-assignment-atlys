@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Frontend Assignment - Atyls
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for the frontend assignment for Atyls. The assignment is to create a simple web design that displays a list of posts and some auth based UI screens. The design is provided in a Figma file. The design is built using React, TypeScript, and Tailwind CSS.
 
-## Available Scripts
+## Live Preview
 
-In the project directory, you can run:
+Please visit [frontend-assignment-atlys.netlify.app](https://frontend-assignment-atlys.netlify.app/) to see the live preview of the site.
 
-### `npm start`
+![Atyls Frontend Assignment](/public/cover.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+Before you begin, ensure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js**: You can download it from [nodejs.org](https://nodejs.org/).
+- **npm**: Comes with Node.js, but you can update it using `npm install npm@latest -g`.
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```sh
+   git clone https://github.com/yodkwtf/frontend-assignment-atlys.git
+   ```
 
-### `npm run eject`
+2. Navigate to the project directory
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```sh
+   cd frontend-assignment-atlys
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install the dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```sh
+    npm install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the development server
 
-## Learn More
+   ```sh
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Open your browser and navigate to [http://localhost:3000/](http://localhost:3000/) to view the app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Build For Production
+
+To build the app for production, run the following command:
+
+```sh
+npm run build
+```
+
+This will create a `build` folder with the compiled assets. You can then deploy this folder to a web server.
+
+## Contact
+
+- **Email:** [48durgesh.kumar@gmail.com](mailto:48durgesh.kumar@gmail.com)
+- **LinkedIn:** [Durgesh Kumar](https://www.linkedin.com/in/durgesh-chaudhary/)
+- **GitHub:** [@yodkwtf](https://github.com/yodkwtf)

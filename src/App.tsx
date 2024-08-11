@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthPage, PostsPage } from './pages';
+import { Portfolio } from './components';
 
 const App: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const App: React.FC = () => {
         <Route path="/" element={<AuthPage />} />
         <Route path="/posts" element={<PostsPage />} />
       </Routes>
+      <Portfolio />
     </main>
   );
 };

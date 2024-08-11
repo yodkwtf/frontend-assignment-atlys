@@ -22,7 +22,6 @@ const CreatePost = () => {
         </div>
         <Button
           classes={['ml-auto', 'px-8']}
-          type="submit"
           buttonText="Post"
           handleClick={openModal}
         />
