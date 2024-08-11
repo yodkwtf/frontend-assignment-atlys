@@ -1,3 +1,5 @@
+import { FaEye } from 'react-icons/fa';
+
 interface InputProps {
   labelFor: string;
   primaryLabel: string;
@@ -24,11 +26,21 @@ const Input: React.FC<InputProps> = ({
           <small className="text-xs cursor-pointer">{secondaryLabel}</small>
         )}
       </label>
-      <input
-        type={inputType}
-        placeholder={placeholder}
-        className="bg-transparent min-w-[415px] border-[1.5px] border-custom-b rounded-[0.25rem] p-2 placeholder-custom-ph"
-      />
+      <div className="relative">
+        <input
+          type={inputType}
+          placeholder={placeholder}
+          className="bg-transparent text-custom-ph min-w-[415px] border-[1.5px] border-custom-b rounded-[0.25rem] p-2 placeholder-custom-ph w-full pr-10"
+        />
+        {inputType === 'password' && (
+          <button
+            type="button"
+            className="absolute right-2 top-3.5 text-custom-ph"
+          >
+            <FaEye />
+          </button>
+        )}
+      </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Register: React.FC = () => {
         Create an account to continue
       </h3>
       <form>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <Input
             labelFor="email"
             primaryLabel="Email"
