@@ -1,16 +1,12 @@
 import React from 'react';
-import Button from './common/Button';
-import { useAppContext } from '../context';
-
-type AppContext = {
-  setShowModal: (value: boolean) => void;
-};
+import Button from '../common/Button';
+import useAppContext from '../../hooks/useAppContext';
 
 const CreatePost = () => {
-  const { setShowModal } = useAppContext() as AppContext;
+  const { openModal } = useAppContext();
 
   return (
-    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-p">
+    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-b">
       <h4 className="text-custom-primary text-lg font-medium text-left">
         Create post
       </h4>
@@ -29,10 +25,7 @@ const CreatePost = () => {
           classes={['ml-auto', 'px-8']}
           type="submit"
           buttonText="Post"
-          handleClick={(e) => {
-            e.preventDefault();
-            setShowModal(true);
-          }}
+          handleClick={openModal}
         />
       </form>
     </div>

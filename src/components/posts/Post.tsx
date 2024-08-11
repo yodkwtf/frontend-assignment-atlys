@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = ({
   commentCount,
 }) => {
   return (
-    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-p">
+    <div className="bg-custom-dark rounded-lg p-6 relative z-10 flex flex-col gap-4 border-2 border-custom-b">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <img

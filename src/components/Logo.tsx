@@ -1,6 +1,12 @@
+import React from 'react';
 import logo from '../assets/Logo.png';
 
-const Logo = () => {
-  return <img src={logo} alt="logo" />;
+const Logo: React.FC = () => {
+  return (
+    <div className="flex justify-center mb-12">
+      <img src={logo} alt="logo" />
+    </div>
+  );
 };
+
 export default Logo;

@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAppContext } from '../context';
+
 import { FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 import { Button, Input } from './common';
+import useAppContext from '../hooks/useAppContext';
 
 const Register: React.FC = () => {
-  const { setShowLogin } = useAppContext() as {
-    setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
-  };
-  const navigate = useNavigate();
+  const { openLogin, handleSubmit } = useAppContext();
 
   return (
     <Wrapper>
@@ -42,17 +39,14 @@ const Register: React.FC = () => {
           <Button
             type="submit"
             buttonText="Continue"
-            handleClick={(e) => {
-              e.preventDefault();
-              navigate('/posts');
-            }}
+            handleClick={handleSubmit}
           />
         </div>
         <p className="cursor-pointer text-sm mt-4 text-custom-secondary flex gap-1">
           Already have an account?{' '}
           <span
             className="text-custom-primary flex items-center gap-1"
-            onClick={() => setShowLogin(true)}
+            onClick={openLogin}
           >
             Login <FaArrowRight />
           </span>

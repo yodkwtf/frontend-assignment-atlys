@@ -1,7 +1,18 @@
 import author1 from '../assets/author-1.png';
 import author2 from '../assets/author-2.png';
 
-const posts = [
+interface Post {
+  id: number;
+  author: string;
+  authorImg: string;
+  time: string;
+  emoji: string;
+  isEdited: boolean;
+  content: string;
+  commentCount: number;
+}
+
+const posts: Post[] = [
   {
     id: 1,
     author: 'Theresa Webb',

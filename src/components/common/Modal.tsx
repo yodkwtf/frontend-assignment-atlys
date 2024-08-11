@@ -1,18 +1,10 @@
 import React from 'react';
-import { useAppContext } from '../../context';
 import { LiaTimesSolid } from 'react-icons/lia';
+import useAppContext from '../../hooks/useAppContext';
 
-interface ModalProps {
-  children: React.ReactNode;
-}
+const Modal: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const { showModal, closeModal } = useAppContext();
 
-type AppContextType = {
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const Modal: React.FC<ModalProps> = ({ children }) => {
-  const { showModal, setShowModal } = useAppContext() as AppContextType;
   return (
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 grid place-items-center ${
@@ -24,7 +16,7 @@ const Modal: React.FC<ModalProps> = ({ children }) => {
         <div className="absolute top-4 right-4 bg-custom-darkest rounded-full w-8 h-8 z-50">
           <button
             className="grid place-items-center w-full h-full z-51 text-white"
-            onClick={() => setShowModal(false)}
+            onClick={closeModal}
           >
             <LiaTimesSolid />
           </button>

@@ -29,7 +29,7 @@ const Input: React.FC<InputProps> = ({
       <input
         type={inputType}
         placeholder={placeholder}
-        className="bg-transparent min-w-[415px] border-[1.5px] border-custom-p rounded-[0.25rem] p-2 placeholder-custom-ph"
+        className="bg-transparent min-w-[415px] border-[1.5px] border-custom-b rounded-[0.25rem] p-2 placeholder-custom-ph"
       />
     </div>
   );

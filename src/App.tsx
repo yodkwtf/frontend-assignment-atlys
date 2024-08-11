@@ -1,15 +1,16 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthPage, PostsPage } from './pages';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <main>
       <Routes>
         <Route path="/" element={<AuthPage />} />
         <Route path="/posts" element={<PostsPage />} />
       </Routes>
-    </div>
+    </main>
   );
-}
+};
 
 export default App;

@@ -3,7 +3,7 @@ import React from 'react';
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   buttonText: string;
-  handleClick?: (e: React.MouseEvent) => void;
+  handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   classes?: string[];
 };
 
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      onClick={handleClick}
+      onClick={(e) => handleClick(e)}
       className={`bg-custom-button text-white py-2 px-4 rounded-md font-medium transition-colors duration-200 hover:bg-custom-button-hover ${classes.join(
         ' '
       )}`}

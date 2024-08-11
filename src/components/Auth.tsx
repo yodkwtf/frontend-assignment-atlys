@@ -1,13 +1,9 @@
-import { useAppContext } from '../context';
+import useAppContext from '../hooks/useAppContext';
 import Login from './Login';
 import Register from './Register';
 
-interface AppContextType {
-  showLogin: boolean;
-}
-
 const Auth: React.FC = () => {
-  const { showLogin } = useAppContext() as AppContextType;
+  const { showLogin } = useAppContext();
 
   return <>{showLogin ? <Login /> : <Register />}</>;
 };
