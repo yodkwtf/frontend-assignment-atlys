@@ -36,7 +36,7 @@ To get a local copy up and running follow these simple steps.
 3. Install the dependencies
 
    ```sh
-    npm install
+   npm install
    ```
 
 4. Start the development server
